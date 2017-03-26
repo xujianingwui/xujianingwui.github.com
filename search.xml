@@ -13,8 +13,8 @@
 <li><p>师资团队的swiper，后台有多少数据都可自动撑开，可以控制它每次显示几张，每次滑动可以滑几张，用slidesPerView,  slidesPerGroup,  spaceBetween.</p>
 </li>
 </ul>
-<p>布局：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$ &lt;div class=<span class="string">"lyn-team swiper-container1 tab-con-lis tab-con-lis-active"</span>&gt;</div><div class="line">        &lt;ul class=<span class="string">"lyn-team-inner swiper-wrapper"</span>&gt;</div><div class="line">            &#123;pc:content action=<span class="string">"position"</span> posid=<span class="string">"34"</span> moreinfo=<span class="string">"1"</span>&#125;</div><div class="line">                &#123;php <span class="variable">$sztd</span>=0&#125;</div><div class="line">                &#123;loop <span class="variable">$data</span> <span class="variable">$lynsz</span>&#125;</div><div class="line">                &#123;php <span class="variable">$sztd</span>++&#125;</div><div class="line">                &lt;li&#123;<span class="keyword">if</span> <span class="variable">$sztd</span>==1&#125; class=<span class="string">"lyn-team-lis lyn-team-lishover swiper-slide"</span>&#123;<span class="keyword">else</span>&#125; class=<span class="string">"lyn-team-lis swiper-slide"</span>&#123;/<span class="keyword">if</span>&#125;&gt;</div><div class="line">                    ......</div><div class="line">                &lt;/li&gt;</div><div class="line">                &#123;/loop&#125;</div><div class="line">            &#123;/pc&#125;</div><div class="line">        &lt;/ul&gt;</div><div class="line">    &lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ js:</div><div class="line">    var mySwiper = new Swiper(<span class="string">'.swiper-container1'</span>,&#123;</div><div class="line">      slidesPerView : 4,</div><div class="line">      slidesPerGroup : 4,</div><div class="line">      spaceBetween:40</div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
+<p>布局：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;div class=<span class="string">"lyn-team swiper-container1 tab-con-lis tab-con-lis-active"</span>&gt;</div><div class="line">       &lt;ul class=<span class="string">"lyn-team-inner swiper-wrapper"</span>&gt;</div><div class="line">           &#123;pc:content action=<span class="string">"position"</span> posid=<span class="string">"34"</span> moreinfo=<span class="string">"1"</span>&#125;</div><div class="line">               &#123;php <span class="variable">$sztd</span>=0&#125;</div><div class="line">               &#123;loop <span class="variable">$data</span> <span class="variable">$lynsz</span>&#125;</div><div class="line">               &#123;php <span class="variable">$sztd</span>++&#125;</div><div class="line">               &lt;li&#123;<span class="keyword">if</span> <span class="variable">$sztd</span>==1&#125; class=<span class="string">"lyn-team-lis lyn-team-lishover swiper-slide"</span>&#123;<span class="keyword">else</span>&#125; class=<span class="string">"lyn-team-lis swiper-slide"</span>&#123;/<span class="keyword">if</span>&#125;&gt;</div><div class="line">                   ......</div><div class="line">               &lt;/li&gt;</div><div class="line">               &#123;/loop&#125;</div><div class="line">           &#123;/pc&#125;</div><div class="line">       &lt;/ul&gt;</div><div class="line">   &lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">js:</div><div class="line">   var mySwiper = new Swiper(<span class="string">'.swiper-container1'</span>,&#123;</div><div class="line">     slidesPerView : 4,</div><div class="line">     slidesPerGroup : 4,</div><div class="line">     spaceBetween:40</div><div class="line">   &#125;)</div></pre></td></tr></table></figure>
 <ul>
 <li><p>slidesPerView:</p>
 <blockquote>
@@ -43,9 +43,8 @@
 </blockquote>
 </li>
 </ul>
-<p>2.渐变的兼容</p>
-<pre><code>filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=red,endcolorstr=blue,gradientType=1);
-</code></pre><p>其中gradientType=1代表横向渐变，</p>
+<p>2.渐变的兼容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=red,endcolorstr=blue,gradientType=1);</div></pre></td></tr></table></figure></p>
+<p>其中gradientType=1代表横向渐变，</p>
 <p>gradientType=0代表纵向淅变。</p>
 <p>startcolorstr=”色彩” 代表渐变渐变起始的色彩，</p>
 <p>endcolorstr=”色彩” 代表渐变结尾的色彩。</p>
@@ -56,18 +55,8 @@
 <blockquote>
 <p> 鼠标移上有默认样式（即加了空类名）的，return，鼠标移上没有默认样式的，让有默认样式的去掉空类名，动态地去掉样式，同时让鼠标移上的那个动态地加上样式，加上空类名。</p>
 </blockquote>
-<pre><code>var lyn_sciencelis=$(&quot;.lyn-science-lis&quot;);
-lyn_sciencelis.each(function(index){
-    $(this).hover(function(){
-        if($(this).find(&quot;.lyn-science-green&quot;).hasClass(&quot;lyn-green&quot;)){
-          return;
-        }else if(!$(this).find(&quot;.lyn-science-green&quot;).hasClass(&quot;lyn-green&quot;)){
-          lyn_sciencelis.find(&quot;.lyn-green&quot;).animate({height:5},600).removeClass(&quot;lyn-green&quot;);
-          $(this).find(&quot;.lyn-science-green&quot;).animate({height:263},600).addClass(&quot;lyn-green&quot;);
-        }
-    })
-})
-</code></pre><ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var lyn_sciencelis=$(<span class="string">".lyn-science-lis"</span>);</div><div class="line">    lyn_sciencelis.each(<span class="keyword">function</span>(index)&#123;</div><div class="line">        $(this).hover(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">            <span class="keyword">if</span>($(this).find(<span class="string">".lyn-science-green"</span>).hasClass(<span class="string">"lyn-green"</span>))&#123;</div><div class="line">              <span class="built_in">return</span>;</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(!$(this).find(<span class="string">".lyn-science-green"</span>).hasClass(<span class="string">"lyn-green"</span>))&#123;</div><div class="line">              lyn_sciencelis.find(<span class="string">".lyn-green"</span>).animate(&#123;height:5&#125;,600).removeClass(<span class="string">"lyn-green"</span>);</div><div class="line">              $(this).find(<span class="string">".lyn-science-green"</span>).animate(&#123;height:263&#125;,600).addClass(<span class="string">"lyn-green"</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
+<ol>
 <li><p>针对有几块平均分配的问题</p>
 <blockquote>
 <p>不要给第一个或者最后一个添加特殊的类名，在phpcmas循环时不太好处理。<br> 解决方案：父类ul==&gt;margin-left：-200px;子类li==&gt;margin-left:200px;</p>
@@ -90,76 +79,15 @@ lyn_sciencelis.each(function(index){
 </ul>
 </li>
 </ol>
-<pre><code>@font-face {
-  font-family: &apos;titfont&apos;;
-  src: url(&apos;../ldfont/helveticaneueltpro-thex.eot&apos;); /* IE9 Compat Modes */
-  src: url(&apos;../ldfont/helveticaneueltpro-thex.eot?#iefix&apos;) format(&apos;embedded-opentype&apos;), /* IE6-IE8 */
-       url(&apos;../ldfont/helveticaneueltpro-thex.woff&apos;) format(&apos;woff&apos;), /* Modern Browsers */
-       url(&apos;../ldfont/helveticaneueltpro-thex.ttf&apos;)  format(&apos;truetype&apos;), /* Safari, Android, iOS */
-       url(&apos;../ldfont/helveticaneueltpro-thex.svg#svgFontName&apos;) format(&apos;svg&apos;); /* Legacy iOS */
-}
-.box{font-family: &apos;titfont&apos;;}
-</code></pre><ol>
-<li><p>给文字添加渐变的方法:</p>
-<pre><code>background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgb(40, 177, 254)), to(rgb(89, 229, 96)));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-color:#28B1FE;        
-</code></pre><ul>
-<li>linear 后面的参数是调整渐变方向的，可以自己设置比如：（0 0 ,0 20）  </li>
-<li>但是不支持IE浏览器，虽然支持webkit内核,但较新版的火狐也支持。</li>
-</ul>
-</li>
-<li><p>百度地图生成器：</p>
-<ul>
-<li>网址：<a href="http://lbsyun.baidu.com/" target="_blank" rel="external">http://lbsyun.baidu.com/</a>    百度地图开放平台</li>
-<li>在网站上进行相关地点搜索和标注设置，设置好了点击复制代码</li>
-<li>百度生成的地图需要使用一个钥匙key才能永久使用, 可以根据他的提示去生成一个自己的key，不想生成的话可是使用我生成好的key，这个可以一直用。<blockquote>
-<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;http://api.map.baidu.com/api?v=2.0&amp;ak=uhXEOUA0BHAXXBfaujxqZaHHdExmdcQa&quot;&gt;&lt;/script&gt;
-</code></pre></blockquote>
-</li>
-</ul>
-</li>
-</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">@font-face &#123;</div><div class="line">          font-family: <span class="string">'titfont'</span>;</div><div class="line">          src: url(<span class="string">'../ldfont/helveticaneueltpro-thex.eot'</span>); /* IE9 Compat Modes */</div><div class="line">          src: url(<span class="string">'../ldfont/helveticaneueltpro-thex.eot?#iefix'</span>) format(<span class="string">'embedded-opentype'</span>), /* IE6-IE8 */</div><div class="line">               url(<span class="string">'../ldfont/helveticaneueltpro-thex.woff'</span>) format(<span class="string">'woff'</span>), /* Modern Browsers */</div><div class="line">               url(<span class="string">'../ldfont/helveticaneueltpro-thex.ttf'</span>)  format(<span class="string">'truetype'</span>), /* Safari, Android, iOS */</div><div class="line">               url(<span class="string">'../ldfont/helveticaneueltpro-thex.svg#svgFontName'</span>) format(<span class="string">'svg'</span>); /* Legacy iOS */</div><div class="line">        &#125;</div><div class="line">        .box&#123;font-family: <span class="string">'titfont'</span>;&#125;</div></pre></td></tr></table></figure>
 <ol>
-<li>问题：鼠标多次移入移出导航，多次动画<blockquote>
-<p>方法：</p>
-<ul>
-<li>使用jQuery的filter(‘:not(:animated)’),只让没有动画的元素执行</li>
-</ul>
-</blockquote>
-</li>
-</ol>
-<ol>
-<li><p>动画积累问题总结</p>
-<blockquote>
-<pre><code>1. stop()
- //语法结构
-   $(&quot;#div&quot;).stop();//停止当前动画，继续下一个动画
-   $(&quot;#div&quot;).stop(true);//清除元素的所有动画
-   $(&quot;#div&quot;).stop(false, true);//让当前动画直接到达末状态 ，继续下一个动画
-   $(&quot;#div&quot;).stop(true, true);//清除元素的所有动画，让当前动画直接到达末状态
-2. filter过滤 :在动画发生前过滤掉正在进行动画的元素
-  filter(&apos;:not(:animated)&apos;)
-</code></pre></blockquote>
-</li>
-<li><p>PIE</p>
+<li>给文字添加渐变的方法:<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgb(40, 177, 254)), to(rgb(89, 229, 96)));</div><div class="line">        -webkit-background-clip: text;</div><div class="line">        -webkit-text-fill-color: transparent;</div><div class="line">        color:<span class="comment">#28B1FE;        </span></div><div class="line">```     </div><div class="line">    * linear 后面的参数是调整渐变方向的，可以自己设置比如：（0 0 ,0 20）  </div><div class="line">    * 但是不支持IE浏览器，虽然支持webkit内核,但较新版的火狐也支持。</div><div class="line"></div><div class="line">9. 百度地图生成器：</div><div class="line">    * 网址：http://lbsyun.baidu.com/    百度地图开放平台</div><div class="line">    * 在网站上进行相关地点搜索和标注设置，设置好了点击复制代码</div><div class="line">    * 百度生成的地图需要使用一个钥匙key才能永久使用, 可以根据他的提示去生成一个自己的key，不想生成的话可是使用我生成好的key，这个可以一直用。</div><div class="line">``` bash</div><div class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"http://api.map.baidu.com/api?v=2.0&amp;ak=uhXEOUA0BHAXXBfaujxqZaHHdExmdcQa"</span>&gt;&lt;/script&gt;</div><div class="line">```     </div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line">10. 问题：鼠标多次移入移出导航，多次动画</div><div class="line">  &gt; 方法：</div><div class="line">  &gt; * 使用jQuery的filter(<span class="string">':not(:animated)'</span>),只让没有动画的元素执行</div><div class="line"></div><div class="line"></div><div class="line">11. 动画积累问题总结</div><div class="line">&gt;       1. stop()</div><div class="line">&gt;        //语法结构</div><div class="line">&gt;          $(<span class="string">"#div"</span>).stop();//停止当前动画，继续下一个动画</div><div class="line">&gt;          $(<span class="string">"#div"</span>).stop(<span class="literal">true</span>);//清除元素的所有动画</div><div class="line">&gt;          $(<span class="string">"#div"</span>).stop(<span class="literal">false</span>, <span class="literal">true</span>);//让当前动画直接到达末状态 ，继续下一个动画</div><div class="line">&gt;          $(<span class="string">"#div"</span>).stop(<span class="literal">true</span>, <span class="literal">true</span>);//清除元素的所有动画，让当前动画直接到达末状态</div><div class="line">&gt;       2. filter过滤 :在动画发生前过滤掉正在进行动画的元素</div><div class="line">&gt;         filter(<span class="string">':not(:animated)'</span>)</div><div class="line"></div><div class="line">12. PIE</div><div class="line">* html: </div><div class="line">   *  给需要用到的标签添加一个pie的类名</div><div class="line">    * 在html里引入js文件：</div><div class="line">             ```&lt;!--[<span class="keyword">if</span> lt IE 11]&gt;</div><div class="line">             &lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"css/PIE/PIE.js"</span>&gt;&lt;/script&gt; </div><div class="line">             &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <ul>
-<li><p>html: </p>
-<ul>
-<li>给需要用到的标签添加一个pie的类名<ul>
-<li>在html里引入js文件：<pre><code><figure class="highlight plain"><figcaption><span>lt IE 11]></span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;css/PIE/PIE.js&quot;&gt;&lt;/script&gt; </div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
-</code></pre></li>
+<li>css:  加一个 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">* js：``` $(function() &#123; </div><div class="line">                 if($(&quot;body&quot;)[0].attachEvent)&#123;</div><div class="line">                    $(&apos;.pie&apos;).each(function() &#123;  </div><div class="line">                       PIE.attach(this);  </div><div class="line">                    &#125;);</div><div class="line">                 &#125;    </div><div class="line">          &#125;);</div></pre></td></tr></table></figure></li>
 </ul>
-</li>
-</ul>
-</li>
-<li><p>css:  加一个 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">* js：``` $(function() &#123; </div><div class="line">                 if($(&quot;body&quot;)[0].attachEvent)&#123;</div><div class="line">                    $(&apos;.pie&apos;).each(function() &#123;  </div><div class="line">                       PIE.attach(this);  </div><div class="line">                    &#125;);</div><div class="line">                 &#125;    </div><div class="line">          &#125;);</div></pre></td></tr></table></figure></p>
-</li>
-</ul>
-<p>&gt;<br>    渐变的解决方法：<br>            background:linear-gradient(red,yellow);<br>            -pie-background:linear-gradient(red,yellow);<br>            behavior:url(PIE/PIE.htc);</p>
+<p>&gt;<br>    渐变的解决方法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">background:linear-gradient(red,yellow);</div><div class="line">            -pie-background:linear-gradient(red,yellow);</div><div class="line">            behavior:url(PIE/PIE.htc);</div></pre></td></tr></table></figure></p>
 <h3 id="二、phpcms"><a href="#二、phpcms" class="headerlink" title="二、phpcms"></a>二、phpcms</h3><h4 id="（一）语法"><a href="#（一）语法" class="headerlink" title="（一）语法"></a>（一）语法</h4><p>对后台操作过程中phpcms语句的总结</p>
 <blockquote>
 <pre><code>文件导入
@@ -208,261 +136,19 @@ var future1=new Date(nowstr1);
 <p>然后用函数计算出百分比和倒计时</p>
 </blockquote>
 <pre><code>//百分比共用函数
-function percent(future,str){
-  var arr=getDay(future);
-  var djs_day=arr[0];
-  var begin_day=new Date(str);
-  var length_time=future.getTime()-begin_day.getTime();
-  var zong_day=Math.floor(length_time/(24*60*60*1000));
-  var science_bili=Math.floor(djs_day/zong_day*100);
-  return science_bili;
-}
-//倒计时共用的函数
-function getDay(future){
-  var now=new Date();
-  var arr=[];
-  var length=future.getTime()-now.getTime();
-  var day=Math.floor(length/(24*60*60*1000));
-  arr.push(day);
-  length%=(24*60*60*1000);
-  var hour=Math.floor(length/(60*60*1000));
-  arr.push(hour);
-  length%=(60*60*1000);
-  var minute=Math.floor(length/(60*1000));
-  arr.push(minute);
-  length%=(60*1000);
-  var second=Math.floor(length/1000);
-  arr.push(second);
-  return arr;
-}
-</code></pre><blockquote>
-<p>最后再显示到页面中</p>
-</blockquote>
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> percent(future,str)&#123;</div><div class="line">      var arr=getDay(future);</div><div class="line">      var djs_day=arr[0];</div><div class="line">      var begin_day=new Date(str);</div><div class="line">      var length_time=future.getTime()-begin_day.getTime();</div><div class="line">      var zong_day=Math.floor(length_time/(24*60*60*1000));</div><div class="line">      var science_bili=Math.floor(djs_day/zong_day*100);</div><div class="line">      <span class="built_in">return</span> science_bili;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div></pre></td><td class="code"><pre><div class="line">//倒计时共用的函数</div><div class="line">    <span class="keyword">function</span> getDay(future)&#123;</div><div class="line">      var now=new Date();</div><div class="line">      var arr=[];</div><div class="line">      var length=future.getTime()-now.getTime();</div><div class="line">      var day=Math.floor(length/(24*60*60*1000));</div><div class="line">      arr.push(day);</div><div class="line">      length%=(24*60*60*1000);</div><div class="line">      var hour=Math.floor(length/(60*60*1000));</div><div class="line">      arr.push(hour);</div><div class="line">      length%=(60*60*1000);</div><div class="line">      var minute=Math.floor(length/(60*1000));</div><div class="line">      arr.push(minute);</div><div class="line">      length%=(60*1000);</div><div class="line">      var second=Math.floor(length/1000);</div><div class="line">      arr.push(second);</div><div class="line">      <span class="built_in">return</span> arr;</div><div class="line">    &#125;</div><div class="line">```   </div><div class="line">    </div><div class="line">&gt; 最后再显示到页面中</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">2. 从后台取内容</div><div class="line"></div><div class="line">在取后台内容的时候，取内容的多图片模型，内容页的是数组，取到的是json对象</div><div class="line"></div><div class="line">    <span class="variable">$xyzp</span>[APP_work]==&gt;</div><div class="line">    //输出的json对象</div><div class="line">     &#123;</div><div class="line">      <span class="string">"0"</span>:&#123;</div><div class="line">              url:<span class="string">'http://'</span>.alt:<span class="string">''</span>,</div><div class="line">           &#125;</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">          <span class="string">''</span>1<span class="string">''</span>:&#123; </div><div class="line">               url:<span class="string">'http://'</span>.alt:<span class="string">''</span>,</div><div class="line">             &#125;</div><div class="line">      &#125;//需要的是url</div><div class="line"></div><div class="line">html中的代码</div><div class="line"></div><div class="line">        &lt;div class=<span class="string">"szh-xyzp-right szh-xyzp-right1 tab-con-lis tab-con-lis-active"</span>&gt;</div><div class="line">                 &lt;div class=<span class="string">"szh-zp-top"</span>&gt;</div><div class="line">                        &lt;div class=<span class="string">"szh-zps"</span>&gt;</div><div class="line">                              //取内容页</div><div class="line">                              &#123;pc:content action=<span class="string">"position"</span> posid=<span class="string">"39"</span>&#125;</div><div class="line">                               &#123;loop <span class="variable">$data</span> <span class="variable">$xyzp</span>&#125;</div><div class="line">                               //转化为数组</div><div class="line">                               &#123;php <span class="variable">$arr</span>=json_decode(<span class="variable">$xyzp</span>[APP_work],<span class="literal">true</span>)&#125;</div><div class="line">                                    &lt;ul class=<span class="string">"szh-zps-inner"</span>&gt;</div><div class="line">                                       //取数组中的内容</div><div class="line">                                        &lt;li class=<span class="string">"szh-zp-item"</span>&gt;&lt;a href=<span class="string">"&#123;<span class="variable">$xyzp</span>[url]&#125;"</span>&gt;&lt;img src=<span class="string">"&#123;<span class="variable">$arr</span>[0][url]&#125;"</span> alt=<span class="string">""</span> /&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">                                        &lt;li class=<span class="string">"szh-zp-item"</span>&gt;&lt;a href=<span class="string">"&#123;<span class="variable">$xyzp</span>[url]&#125;"</span>&gt;&lt;img src=<span class="string">"&#123;<span class="variable">$arr</span>[1][url]&#125;"</span> alt=<span class="string">""</span> /&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">                                     &lt;/ul&gt;</div><div class="line">                                &#123;/loop&#125;</div><div class="line">                                &#123;/pc&#125;</div><div class="line">                            &lt;/div&gt;</div><div class="line">                        &lt;/div&gt;</div><div class="line">                        &lt;div class=<span class="string">"szh-zp-bottom"</span>&gt;</div><div class="line">                            &lt;div class=<span class="string">"szh-zp-line"</span>&gt;</div><div class="line">                                &lt;div class=<span class="string">"szh-zp-radius"</span>&gt;&lt;/div&gt;</div><div class="line">                            &lt;/div&gt;</div><div class="line">                        &lt;/div&gt;</div><div class="line">                    &lt;/div&gt;</div><div class="line"></div><div class="line">最后转把json对象转化为数组，然后用二维数组取的图片</div><div class="line"></div><div class="line">弊端是只能取固定的作品，比如读一个，第二个</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">3. 选项卡</div><div class="line"></div><div class="line">在套后台时，有那种选项卡的问题，选项课切换内容的时候会有其他的问题，</div><div class="line">所以在布局的时候要把内容加上</div><div class="line"></div><div class="line">拖拽条拖的时候，不能用同一个拖拽条拖拽不同的内容，所以整个内容切换。</div><div class="line">且不同的内容之间会相互影响</div><div class="line"></div><div class="line">注意取父元素下的元素</div><div class="line"></div><div class="line">    $(this).hover(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">        <span class="keyword">if</span>($(this).hasClass(<span class="string">"tab-btn-lis-active"</span>))&#123;</div><div class="line">          <span class="built_in">return</span>;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">          tablis.removeClass(<span class="string">"tab-btn-lis-active"</span>);</div><div class="line">          $(this).addClass(<span class="string">"tab-btn-lis-active"</span>);</div><div class="line">          conlis.removeClass(<span class="string">"tab-con-lis-active"</span>);</div><div class="line">          conlis.eq(($(this).index())/2).addClass(<span class="string">"tab-con-lis-active"</span>);</div><div class="line">          //对应的索引值</div><div class="line">          var szhindex=($(this).index())/2+1;</div><div class="line">          </div><div class="line">          //拖拽调用函数</div><div class="line">          tuozhuai(<span class="string">".szh-xyzp-right"</span>+szhindex);</div><div class="line">          szhtuo(<span class="string">".ly-problem-sz"</span>+szhindex);</div><div class="line">          //单调用时会覆盖，然后又用的的原生</div><div class="line"></div><div class="line">        &#125;</div><div class="line">      &#125;)</div><div class="line"></div><div class="line">函数的一部分</div><div class="line"></div><div class="line">    <span class="keyword">function</span> tuozhuai(str)&#123;</div><div class="line">        var scrollBar=$(str+<span class="string">" .szh-zp-radius"</span>)[0];</div><div class="line">        var scrollLine=$(str+<span class="string">" .szh-zp-line"</span>)[0];</div><div class="line">       </div><div class="line">       </div><div class="line">       </div><div class="line">4. 多图片字段</div><div class="line">     1. 在show页面中使用多图片</div><div class="line">        代码实例:</div><div class="line">&gt;           &#123;loop <span class="variable">$APP_work</span> <span class="variable">$k</span>&#125;</div><div class="line">&gt;           &lt;li class=<span class="string">"ljg-works-lis"</span>&gt;</div><div class="line">&gt;               &lt;a href=<span class="string">"javascript:;"</span>&gt;&lt;img src=<span class="string">"&#123;<span class="variable">$k</span>[url]&#125;"</span>/&gt;&lt;/a&gt;</div><div class="line">&gt;           &lt;/li&gt;</div><div class="line">&gt;       &#123;/loop&#125;</div><div class="line">        注意：app_work -&gt; 是多图片的字段名 ，&#123;<span class="variable">$k</span>[url]&#125;是取到的图片路径。 </div><div class="line"></div><div class="line">5. 上一篇  下一篇</div><div class="line">&gt;      &lt;strong&gt;上一篇：&lt;/strong&gt;&lt;a href=<span class="string">"&#123;<span class="variable">$previous_page</span>[url]&#125;"</span>&gt;&#123;<span class="variable">$previous_page</span>[title]&#125;&lt;/a&gt;&lt;br/&gt;</div><div class="line">&gt;      </div><div class="line">&gt;      &lt;strong&gt;下一篇：&lt;/strong&gt;&lt;a href=<span class="string">"&#123;<span class="variable">$next_page</span>[url]&#125;"</span>&gt;&#123;<span class="variable">$next_page</span>[title]&#125;&lt;/a&gt;</div><div class="line"></div><div class="line">6. 获取子栏目的id</div><div class="line">  * 首先获取子栏目的Id,目前知道有两种方法：</div><div class="line">    + 第一种是：<span class="variable">$CATEGORYS</span>[<span class="variable">$catid</span>][arrchildid]</div><div class="line">            这种方法可以获取到<span class="variable">$catid</span>下面所有子栏目(儿子孙子辈的都可以获取到)的catid,也包含本身的<span class="variable">$catid</span>  </div><div class="line">            eg:<span class="string">'10,56,99,57,102,66,103'</span> --&gt; 10 是当前栏目的catid</div><div class="line">                                            56，57，66是10的子栏目</div><div class="line">                                            而99是56的子栏目</div><div class="line">                                            102是57的子栏目</div><div class="line">                                            103是66的子栏目</div><div class="line">    +  第二种是：<span class="variable">$arrchildid</span></div><div class="line">            这种方法可以获取到直接子栏目的id(只有儿子辈),但是这中方法不能获取到本身的catid。</div><div class="line">            eg:<span class="string">"56,57,66"</span> 都是但前栏目的子栏目的catid</div><div class="line">    </div><div class="line">    +  相同点:通过这两中方法获取到的catid是以字符串的形式存在的(如：<span class="string">"56,57,66"</span>),需要使用php中的explode(<span class="string">'以什么分割'</span>,要分割的字符串)，</div><div class="line">        (如:explode(<span class="string">","</span>, <span class="variable">$str</span>))</div><div class="line">    代码实例：</div><div class="line">   </div><div class="line">            &#123;php <span class="variable">$str</span> = <span class="variable">$arrchildid</span>&#125;</div><div class="line">                 //这里获取当前栏目下的直接子栏目catid，赋值给<span class="variable">$str</span></div><div class="line">             &#123;php <span class="variable">$arr</span> = explode(<span class="string">","</span>, <span class="variable">$str</span>)&#125;</div><div class="line">                 //分割为数组</div><div class="line">             &#123;php <span class="variable">$str2</span> = <span class="variable">$CATEGORYS</span>[<span class="variable">$arr</span>[0]][arrchildid]&#125;     </div><div class="line">                 //因为<span class="variable">$arrchildid</span>获取到的子栏目catid不包含当前栏目的catid，所以下标为0的就是第一个子栏目catid。然后在获取他下面的所有子栏目catid</div><div class="line">             &#123;php <span class="variable">$brr</span> = explode(<span class="string">','</span>,<span class="variable">$str2</span>)&#125;</div><div class="line">             &#123;php <span class="variable">$catid</span> = <span class="variable">$brr</span>[1]&#125;</div><div class="line">                 //使用<span class="variable">$CATEGORYS</span>[<span class="variable">$arr</span>[0]][arrchildid] 获取到的是所有子栏目的catid，并且包含本身的，下标0的catid是本身的，所以在这里去下标 1.</div><div class="line">             &#123;pc:content action=<span class="string">"lists"</span> catid=<span class="string">"<span class="variable">$catid</span>"</span> moreinfo=<span class="string">"1"</span>page=<span class="string">"<span class="variable">$page</span>"</span> num=<span class="string">"2"</span>&#125;</div><div class="line">                 //把获取到的catid赋给一个变量，注意使用变量时，要加双引号。</div><div class="line"> </div><div class="line"></div><div class="line">7. 翻页问题：</div><div class="line"></div><div class="line">    1、页面更改样式，用js获取时有时获取不到，无法更改样式，需要在审查元素查看原始的选择器进行更改</div><div class="line"></div><div class="line">    2、翻页跳转go问题： </div><div class="line"></div><div class="line">        1) html中：</div><div class="line">        &#123;php <span class="variable">$ld</span>=<span class="variable">$catid</span>&#125;//保存当前页面的catid</div><div class="line">        &lt;li class=<span class="string">"ld-usepage"</span> data-catid=<span class="string">"&#123;<span class="variable">$ld</span>&#125;"</span>&gt;//把当前保存的catid放在data-catid属性中</div><div class="line">        2) js中：</div><div class="line">            var ld_val=0;</div><div class="line">            $(<span class="string">".ld-input"</span>).change(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">                ld_val=$(this).val();//获取到当前输入的value即用户想跳转到的页数</div><div class="line">            &#125;);</div><div class="line">            var ld_max= $(<span class="string">".ld-pages a"</span>).length;//用户输入了超出页数的数字时</div><div class="line">            var data_catid=$(<span class="string">".ld-usepage"</span>).attr(<span class="string">"data-catid"</span>);//通过获取属性获取到当前页面的catid</div><div class="line">            $(<span class="string">'.ld-gobtn'</span>).click(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">                <span class="keyword">if</span>(ld_val&gt;(ld_max-1))&#123;</div><div class="line">                    <span class="built_in">return</span>;//用户输入了超出页数的数字时</div><div class="line">                &#125;<span class="keyword">else</span>&#123;</div><div class="line">                    location.href = <span class="string">"http://www.sxuek.com/uek_new/index.php?m=content&amp;c=index&amp;a=lists&amp;catid="</span>+data_catid+<span class="string">"&amp;page="</span>+ld_val;</div><div class="line">                    //直接在地址栏进行更改，链接我们获取到的catid和当前用户想跳转到的页数</div><div class="line">                &#125;</div><div class="line">            &#125;) </div><div class="line"></div><div class="line">8. 社会化分享问题</div><div class="line"></div><div class="line">&gt; 我使用的百度社会化分享 http://share.baidu.com/</div><div class="line">&gt; </div><div class="line">&gt; 其他的社会化分享 http://www.bshare.cn/</div><div class="line"></div><div class="line">- **使用步骤：**</div><div class="line">    - 选择代码获取</div><div class="line">        - 代码功能选择：（注意）左上角选择自己需要的分享功能即可：页面分享功能；图片分享功能；划词分享功能</div><div class="line">        - 页面按钮设置：选择图标样式：图标式文字式浮窗式</div><div class="line">        - 设置完成后复制代码，粘贴到自己需要的html页面即可</div><div class="line"></div><div class="line"></div><div class="line">9. 点赞问题</div><div class="line"></div><div class="line">    </div><div class="line"></div><div class="line">&gt; 点赞功能</div><div class="line"></div><div class="line">    //把phpcmas自带的新闻心情更改为点赞</div><div class="line">    //样式需要自己设置的，更改好之后再index.html中直接给自己的类名设置样式，用js获取的方式不能更改</div><div class="line"></div><div class="line">    1）将后台中 模块---&gt;新闻心情---&gt;心情配置  去掉多余的剩自己需要用的，名称改成 “赞、踩” 提交保存。</div><div class="line"></div><div class="line">    2）修改新闻心情的模板文件：/phpcms/templates/default/mood/index.html </div><div class="line"></div><div class="line">        具体修改方式：</div><div class="line">        //打开的页面注释掉下面的内容</div><div class="line">        &lt;ul&gt;</div><div class="line">        &#123;loop <span class="variable">$setting</span> <span class="variable">$k</span> <span class="variable">$v</span>&#125;</div><div class="line">        &lt;li&gt;&lt;span&gt;&#123;<span class="variable">$data</span>[<span class="variable">$v</span>[<span class="string">'fields'</span>]]&#125;&lt;/span&gt;&lt;div class=<span class="string">"pillar&#123;if isset(<span class="variable">$key</span>) &amp;&amp; <span class="variable">$key</span>==<span class="variable">$k</span>&#125; pass&#123;/if&#125;"</span> style=<span class="string">"height:&#123;<span class="variable">$v</span>[per]&#125;px;"</span>&gt;&lt;/div&gt;&#123;<span class="keyword">if</span> <span class="variable">$v</span>[pic]&#125;&lt;img src=<span class="string">"&#123;IMG_PATH&#125;&#123;<span class="variable">$v</span>[pic]&#125;"</span>&gt;&#123;/<span class="keyword">if</span>&#125;&lt;br /&gt;&lt;label <span class="keyword">for</span>=<span class="string">"n&#123;<span class="variable">$k</span>&#125;"</span>&gt;&#123;<span class="variable">$v</span>[name]&#125;&lt;br /&gt;&lt;input <span class="built_in">type</span>=<span class="string">"radio"</span> id=<span class="string">"n&#123;<span class="variable">$k</span>&#125;"</span> name=<span class="string">"n"</span> onclick=<span class="string">"vote(&#123;<span class="variable">$k</span>&#125;)"</span> &#123;<span class="keyword">if</span> isset(<span class="variable">$key</span>) &amp;&amp; <span class="variable">$key</span>==<span class="variable">$k</span>&#125; checked&#123;/<span class="keyword">if</span>&#125;&gt;&lt;/label&gt;&lt;/li&gt;&#123;/loop&#125;</div><div class="line">        &lt;/ul&gt;</div><div class="line">        //修改为:(将自带的图片去掉)</div><div class="line">        &lt;ul class=<span class="string">"ld-dianzan"</span>&gt;</div><div class="line">        &#123;php <span class="variable">$i</span>=0&#125;</div><div class="line">        &#123;loop <span class="variable">$setting</span> <span class="variable">$k</span> <span class="variable">$v</span>&#125;</div><div class="line">        &#123;<span class="variable">$i</span>++&#125;</div><div class="line">        &lt;li class=<span class="string">"&#123;if <span class="variable">$i</span>==1&#125;ld-li ld-up&#123;elseif <span class="variable">$i</span>==2&#125;ld-li ld-down&#123;/if&#125;"</span>&gt;&lt;label <span class="keyword">for</span>=<span class="string">"n&#123;<span class="variable">$k</span>&#125;"</span>&gt;&lt;input <span class="built_in">type</span>=<span class="string">"button"</span> id=<span class="string">"n&#123;<span class="variable">$k</span>&#125;"</span> name=<span class="string">"n"</span> onclick=<span class="string">"vote(&#123;<span class="variable">$k</span>&#125;)"</span> &#123;<span class="keyword">if</span> isset(<span class="variable">$key</span>) &amp;&amp; <span class="variable">$key</span>==<span class="variable">$k</span>&#125; checked class=<span class="string">"ld-dianzan-active"</span>&#123;/<span class="keyword">if</span>&#125;/&gt;&lt;/label&gt;</div><div class="line">        &lt;i class=<span class="string">"&#123;if <span class="variable">$i</span>==1&#125;ld-up-i&#123;elseif <span class="variable">$i</span>==2&#125;ld-down-i&#123;/if&#125;"</span>&gt;&#123;<span class="variable">$data</span>[<span class="variable">$v</span>[<span class="string">'fields'</span>]]&#125;&lt;/i&gt;</div><div class="line">        &lt;/li&gt;&#123;/loop&#125;</div><div class="line">        &lt;/ul&gt;</div><div class="line"></div><div class="line">    3) 在（html页面）模板页调用mood模块</div><div class="line">    //直接把下面代码填入要使用点赞的地方</div><div class="line"></div><div class="line">        &#123;<span class="keyword">if</span> module_exists(<span class="string">'mood'</span>)&#125;&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"&#123;APP_PATH&#125;index.php?m=mood&amp;c=index&amp;a=init&amp;id=&#123;id_encode(<span class="variable">$catid</span>,<span class="variable">$id</span>,<span class="variable">$siteid</span>)&#125;"</span>&gt;&lt;/script&gt;&#123;/<span class="keyword">if</span>&#125;</div><div class="line"></div><div class="line">    </div><div class="line"></div><div class="line">&gt; 多位数点赞处理（在点赞数量很多时对数字的处理）</div><div class="line"></div><div class="line">    <span class="keyword">function</span> likeNum(num) &#123;</div><div class="line">        <span class="keyword">if</span> (num === 0) &#123;</div><div class="line">            num = <span class="string">''</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (num &gt; 9999 &amp;&amp; num &lt;= 9999999) &#123;</div><div class="line">            num = parseInt(num / 10000);</div><div class="line">            num = parseInt(num) + <span class="string">"万"</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (num &gt; 9999999) &#123;</div><div class="line">            num = parseInt(num / 10000000);</div><div class="line">            num = parseInt(num) + <span class="string">"千万"</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">return</span> num;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    </div><div class="line">    </div><div class="line">10. PHPCMS 怎么调用相关关键词文章</div><div class="line"></div><div class="line"> &lt;!--content指调用内容模块下数据，action指执行获取相关信息方法，catid设置所属栏目，num设置调用数量，keywords设置相关关键词--&gt;</div></pre></td></tr></table></figure>
+<p> {pc:content action=”relation” catid=”$catid” num=”5” keywords=”rs[$keywords]”}<br>       {if $data}<br>           <div class="related"><br>                <h5 class="blue">相关文章：</h5><br>                <ul class="list blue lh24 f14"><br>                {loop $data $r}<br>                     <li>·<a href="{$r[url]}" target="_blank">{$r[title]}</a><span>({date(‘Y-m-d’,$r[inputtime])})</span></li><br>                {/loop}<br>                </ul><br>            </div><br>       {/if}<br>     {/pc}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">11. 如何给文章页添加留言评论功能</div></pre></td></tr></table></figure></p>
+<pre><code>-引入评论留言模块-
+ {if $allow_comment &amp;&amp; module_exists(&apos;comment&apos;)}
+            &lt;iframe src=&quot;{APP_PATH}index.php?m=comment&amp;c=index&amp;a=init&amp;commentid={id_encode(&quot;content_$catid&quot;,$id,$siteid)}&amp;iframe=1&quot; width=&quot;100%&quot; height=&quot;100%&quot; id=&quot;comment_iframe&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+ {/if}  
+ *具体样式修改在*
+ html:uek_new\phpcms\templates\default\comment\show_list.html下
+ css:uek_new\statics\css\default_blue.css
+</code></pre><p>```</p>
 <ol>
-<li>从后台取内容</li>
-</ol>
-<p>在取后台内容的时候，取内容的多图片模型，内容页的是数组，取到的是json对象</p>
-<pre><code>$xyzp[APP_work]==&gt;
-//输出的json对象
- {
-  &quot;0&quot;:{
-          url:&apos;http://&apos;.alt:&apos;&apos;,
-       }
-  },
-  {
-      &apos;&apos;1&apos;&apos;:{ 
-           url:&apos;http://&apos;.alt:&apos;&apos;,
-         }
-  }//需要的是url
-</code></pre><p>html中的代码</p>
-<pre><code>&lt;div class=&quot;szh-xyzp-right szh-xyzp-right1 tab-con-lis tab-con-lis-active&quot;&gt;
-         &lt;div class=&quot;szh-zp-top&quot;&gt;
-                &lt;div class=&quot;szh-zps&quot;&gt;
-                      //取内容页
-                      {pc:content action=&quot;position&quot; posid=&quot;39&quot;}
-                       {loop $data $xyzp}
-                       //转化为数组
-                       {php $arr=json_decode($xyzp[APP_work],true)}
-                            &lt;ul class=&quot;szh-zps-inner&quot;&gt;
-                               //取数组中的内容
-                                &lt;li class=&quot;szh-zp-item&quot;&gt;&lt;a href=&quot;{$xyzp[url]}&quot;&gt;&lt;img src=&quot;{$arr[0][url]}&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
-                                &lt;li class=&quot;szh-zp-item&quot;&gt;&lt;a href=&quot;{$xyzp[url]}&quot;&gt;&lt;img src=&quot;{$arr[1][url]}&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
-                             &lt;/ul&gt;
-                        {/loop}
-                        {/pc}
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;szh-zp-bottom&quot;&gt;
-                    &lt;div class=&quot;szh-zp-line&quot;&gt;
-                        &lt;div class=&quot;szh-zp-radius&quot;&gt;&lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-</code></pre><p>最后转把json对象转化为数组，然后用二维数组取的图片</p>
-<p>弊端是只能取固定的作品，比如读一个，第二个</p>
-<ol>
-<li>选项卡</li>
-</ol>
-<p>在套后台时，有那种选项卡的问题，选项课切换内容的时候会有其他的问题，<br>所以在布局的时候要把内容加上</p>
-<p>拖拽条拖的时候，不能用同一个拖拽条拖拽不同的内容，所以整个内容切换。<br>且不同的内容之间会相互影响</p>
-<p>注意取父元素下的元素</p>
-<pre><code>$(this).hover(function(){
-    if($(this).hasClass(&quot;tab-btn-lis-active&quot;)){
-      return;
-    }else{
-      tablis.removeClass(&quot;tab-btn-lis-active&quot;);
-      $(this).addClass(&quot;tab-btn-lis-active&quot;);
-      conlis.removeClass(&quot;tab-con-lis-active&quot;);
-      conlis.eq(($(this).index())/2).addClass(&quot;tab-con-lis-active&quot;);
-      //对应的索引值
-      var szhindex=($(this).index())/2+1;
-
-      //拖拽调用函数
-      tuozhuai(&quot;.szh-xyzp-right&quot;+szhindex);
-      szhtuo(&quot;.ly-problem-sz&quot;+szhindex);
-      //单调用时会覆盖，然后又用的的原生
-
-    }
-  })
-</code></pre><p>函数的一部分</p>
-<pre><code>function tuozhuai(str){
-    var scrollBar=$(str+&quot; .szh-zp-radius&quot;)[0];
-    var scrollLine=$(str+&quot; .szh-zp-line&quot;)[0];
-</code></pre><ol>
-<li><p>多图片字段</p>
-<ol>
-<li>在show页面中使用多图片<br>代码实例:<blockquote>
-<pre><code>    {loop $APP_work $k}
-    &lt;li class=&quot;ljg-works-lis&quot;&gt;
-        &lt;a href=&quot;javascript:;&quot;&gt;&lt;img src=&quot;{$k[url]}&quot;/&gt;&lt;/a&gt;
-    &lt;/li&gt;
-{/loop}
-</code></pre><p>注意：app_work -&gt; 是多图片的字段名 ，{$k[url]}是取到的图片路径。 </p>
-</blockquote>
-</li>
-</ol>
-</li>
-<li><p>上一篇  下一篇</p>
-<blockquote>
-<pre><code>&lt;strong&gt;上一篇：&lt;/strong&gt;&lt;a href=&quot;{$previous_page[url]}&quot;&gt;{$previous_page[title]}&lt;/a&gt;&lt;br/&gt;
-
-&lt;strong&gt;下一篇：&lt;/strong&gt;&lt;a href=&quot;{$next_page[url]}&quot;&gt;{$next_page[title]}&lt;/a&gt;
-</code></pre></blockquote>
-</li>
-<li><p>获取子栏目的id</p>
-<ul>
-<li><p>首先获取子栏目的Id,目前知道有两种方法：</p>
-<ul>
-<li>第一种是：$CATEGORYS[$catid][arrchildid]<pre><code>这种方法可以获取到$catid下面所有子栏目(儿子孙子辈的都可以获取到)的catid,也包含本身的$catid  
-eg:&apos;10,56,99,57,102,66,103&apos; --&gt; 10 是当前栏目的catid
-                                56，57，66是10的子栏目
-                                而99是56的子栏目
-                                102是57的子栏目
-                                103是66的子栏目
-</code></pre></li>
-<li><p>第二种是：$arrchildid</p>
-<pre><code>这种方法可以获取到直接子栏目的id(只有儿子辈),但是这中方法不能获取到本身的catid。
-eg:&quot;56,57,66&quot; 都是但前栏目的子栏目的catid
-</code></pre></li>
-<li><p>相同点:通过这两中方法获取到的catid是以字符串的形式存在的(如：”56,57,66”),需要使用php中的explode(‘以什么分割’,要分割的字符串)，<br>(如:explode(“,”, $str))<br>代码实例：</p>
-<pre><code>{php $str = $arrchildid}
-     //这里获取当前栏目下的直接子栏目catid，赋值给$str
- {php $arr = explode(&quot;,&quot;, $str)}
-     //分割为数组
- {php $str2 = $CATEGORYS[$arr[0]][arrchildid]}     
-     //因为$arrchildid获取到的子栏目catid不包含当前栏目的catid，所以下标为0的就是第一个子栏目catid。然后在获取他下面的所有子栏目catid
- {php $brr = explode(&apos;,&apos;,$str2)}
- {php $catid = $brr[1]}
-     //使用$CATEGORYS[$arr[0]][arrchildid] 获取到的是所有子栏目的catid，并且包含本身的，下标0的catid是本身的，所以在这里去下标 1.
- {pc:content action=&quot;lists&quot; catid=&quot;$catid&quot; moreinfo=&quot;1&quot;page=&quot;$page&quot; num=&quot;2&quot;}
-     //把获取到的catid赋给一个变量，注意使用变量时，要加双引号。
-</code></pre></li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<ol>
-<li><p>翻页问题：</p>
-<p> 1、页面更改样式，用js获取时有时获取不到，无法更改样式，需要在审查元素查看原始的选择器进行更改</p>
-<p> 2、翻页跳转go问题： </p>
-<pre><code>1) html中：
-{php $ld=$catid}//保存当前页面的catid
-&lt;li class=&quot;ld-usepage&quot; data-catid=&quot;{$ld}&quot;&gt;//把当前保存的catid放在data-catid属性中
-2) js中：
-    var ld_val=0;
-    $(&quot;.ld-input&quot;).change(function(){
-        ld_val=$(this).val();//获取到当前输入的value即用户想跳转到的页数
-    });
-    var ld_max= $(&quot;.ld-pages a&quot;).length;//用户输入了超出页数的数字时
-    var data_catid=$(&quot;.ld-usepage&quot;).attr(&quot;data-catid&quot;);//通过获取属性获取到当前页面的catid
-    $(&apos;.ld-gobtn&apos;).click(function(){
-        if(ld_val&gt;(ld_max-1)){
-            return;//用户输入了超出页数的数字时
-        }else{
-            location.href = &quot;http://www.sxuek.com/uek_new/index.php?m=content&amp;c=index&amp;a=lists&amp;catid=&quot;+data_catid+&quot;&amp;page=&quot;+ld_val;
-            //直接在地址栏进行更改，链接我们获取到的catid和当前用户想跳转到的页数
-        }
-    }) 
-</code></pre></li>
-<li><p>社会化分享问题</p>
-</li>
-</ol>
-<blockquote>
-<p>我使用的百度社会化分享 <a href="http://share.baidu.com/" target="_blank" rel="external">http://share.baidu.com/</a></p>
-<p>其他的社会化分享 <a href="http://www.bshare.cn/" target="_blank" rel="external">http://www.bshare.cn/</a></p>
-</blockquote>
-<ul>
-<li><strong>使用步骤：</strong><ul>
-<li>选择代码获取<ul>
-<li>代码功能选择：（注意）左上角选择自己需要的分享功能即可：页面分享功能；图片分享功能；划词分享功能</li>
-<li>页面按钮设置：选择图标样式：图标式文字式浮窗式</li>
-<li>设置完成后复制代码，粘贴到自己需要的html页面即可</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ol>
-<li>点赞问题</li>
-</ol>
-<blockquote>
-<p>点赞功能</p>
-</blockquote>
-<pre><code>//把phpcmas自带的新闻心情更改为点赞
-//样式需要自己设置的，更改好之后再index.html中直接给自己的类名设置样式，用js获取的方式不能更改
-
-1）将后台中 模块---&gt;新闻心情---&gt;心情配置  去掉多余的剩自己需要用的，名称改成 “赞、踩” 提交保存。
-
-2）修改新闻心情的模板文件：/phpcms/templates/default/mood/index.html 
-
-    具体修改方式：
-    //打开的页面注释掉下面的内容
-    &lt;ul&gt;
-    {loop $setting $k $v}
-    &lt;li&gt;&lt;span&gt;{$data[$v[&apos;fields&apos;]]}&lt;/span&gt;&lt;div class=&quot;pillar{if isset($key) &amp;&amp; $key==$k} pass{/if}&quot; style=&quot;height:{$v[per]}px;&quot;&gt;&lt;/div&gt;{if $v[pic]}&lt;img src=&quot;{IMG_PATH}{$v[pic]}&quot;&gt;{/if}&lt;br /&gt;&lt;label for=&quot;n{$k}&quot;&gt;{$v[name]}&lt;br /&gt;&lt;input type=&quot;radio&quot; id=&quot;n{$k}&quot; name=&quot;n&quot; onclick=&quot;vote({$k})&quot; {if isset($key) &amp;&amp; $key==$k} checked{/if}&gt;&lt;/label&gt;&lt;/li&gt;{/loop}
-    &lt;/ul&gt;
-    //修改为:(将自带的图片去掉)
-    &lt;ul class=&quot;ld-dianzan&quot;&gt;
-    {php $i=0}
-    {loop $setting $k $v}
-    {$i++}
-    &lt;li class=&quot;{if $i==1}ld-li ld-up{elseif $i==2}ld-li ld-down{/if}&quot;&gt;&lt;label for=&quot;n{$k}&quot;&gt;&lt;input type=&quot;button&quot; id=&quot;n{$k}&quot; name=&quot;n&quot; onclick=&quot;vote({$k})&quot; {if isset($key) &amp;&amp; $key==$k} checked class=&quot;ld-dianzan-active&quot;{/if}/&gt;&lt;/label&gt;
-    &lt;i class=&quot;{if $i==1}ld-up-i{elseif $i==2}ld-down-i{/if}&quot;&gt;{$data[$v[&apos;fields&apos;]]}&lt;/i&gt;
-    &lt;/li&gt;{/loop}
-    &lt;/ul&gt;
-
-3) 在（html页面）模板页调用mood模块
-//直接把下面代码填入要使用点赞的地方
-
-    {if module_exists(&apos;mood&apos;)}&lt;script type=&quot;text/javascript&quot; src=&quot;{APP_PATH}index.php?m=mood&amp;c=index&amp;a=init&amp;id={id_encode($catid,$id,$siteid)}&quot;&gt;&lt;/script&gt;{/if}
-</code></pre><blockquote>
-<p>多位数点赞处理（在点赞数量很多时对数字的处理）</p>
-</blockquote>
-<pre><code>function likeNum(num) {
-    if (num === 0) {
-        num = &apos;&apos;;
-    }
-    else if (num &gt; 9999 &amp;&amp; num &lt;= 9999999) {
-        num = parseInt(num / 10000);
-        num = parseInt(num) + &quot;万&quot;;
-    }
-    else if (num &gt; 9999999) {
-        num = parseInt(num / 10000000);
-        num = parseInt(num) + &quot;千万&quot;;
-    }
-    return num;
-}
-</code></pre><ol>
-<li><p>PHPCMS 怎么调用相关关键词文章</p>
-<!--content指调用内容模块下数据，action指执行获取相关信息方法，catid设置所属栏目，num设置调用数量，keywords设置相关关键词-->
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;pc:content action=&quot;relation&quot; catid=&quot;$catid&quot; num=&quot;5&quot; keywords=&quot;rs[$keywords]&quot;&#125;</div><div class="line">      &#123;if $data&#125;</div><div class="line">          &lt;div class=&quot;related&quot;&gt;</div><div class="line">               &lt;h5 class=&quot;blue&quot;&gt;相关文章：&lt;/h5&gt;</div><div class="line">               &lt;ul class=&quot;list blue lh24 f14&quot;&gt;</div><div class="line">               &#123;loop $data $r&#125;</div><div class="line">                    &lt;li&gt;·&lt;a href=&quot;&#123;$r[url]&#125;&quot; target=&quot;_blank&quot;&gt;&#123;$r[title]&#125;&lt;/a&gt;&lt;span&gt;(&#123;date(&apos;Y-m-d&apos;,$r[inputtime])&#125;)&lt;/span&gt;&lt;/li&gt;</div><div class="line">               &#123;/loop&#125;</div><div class="line">               &lt;/ul&gt;</div><div class="line">           &lt;/div&gt;</div><div class="line">      &#123;/if&#125;</div><div class="line">    &#123;/pc&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>如何给文章页添加留言评论功能</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">-引入评论留言模块-</div><div class="line"> &#123;if $allow_comment &amp;&amp; module_exists(&apos;comment&apos;)&#125;</div><div class="line">            &lt;iframe src=&quot;&#123;APP_PATH&#125;index.php?m=comment&amp;c=index&amp;a=init&amp;commentid=&#123;id_encode(&quot;content_$catid&quot;,$id,$siteid)&#125;&amp;iframe=1&quot; width=&quot;100%&quot; height=&quot;100%&quot; id=&quot;comment_iframe&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;</div><div class="line"> &#123;/if&#125;  </div><div class="line"> *具体样式修改在*</div><div class="line"> html:uek_new\phpcms\templates\default\comment\show_list.html下</div><div class="line"> css:uek_new\statics\css\default_blue.css</div></pre></td></tr></table></figure>
-</li>
-<li><p>获取当前文章的浏览量</p>
-</li>
+<li>获取当前文章的浏览量</li>
 </ol>
 <pre><code>&lt;!-- 浏览量 --&gt;
     &lt;script src=&quot;{JS_PATH}uek/js/jquery.min.js&quot;&gt;&lt;/script&gt;
