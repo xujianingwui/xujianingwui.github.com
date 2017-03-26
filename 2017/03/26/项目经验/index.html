@@ -94,8 +94,7 @@
 师资团队的swiper，后台有多少数据都可自动撑开，可以控制它每次显示几张，每次滑动可以滑几张，用slidesPerView,  slidesPerGroup,  spaceBetween.
 
 
-布局：
-&amp;lt;div class=&amp;quot;lyn-team swiper-contai">
+布局：12345678910111213$ &amp;lt;div class=&quot;lyn-team">
 <meta property="og:type" content="article">
 <meta property="og:title" content="项目经验">
 <meta property="og:url" content="http://yoursite.com/2017/03/26/项目经验/index.html">
@@ -107,9 +106,8 @@
 师资团队的swiper，后台有多少数据都可自动撑开，可以控制它每次显示几张，每次滑动可以滑几张，用slidesPerView,  slidesPerGroup,  spaceBetween.
 
 
-布局：
-&amp;lt;div class=&amp;quot;lyn-team swiper-contai">
-<meta property="og:updated_time" content="2017-03-26T10:24:36.591Z">
+布局：12345678910111213$ &amp;lt;div class=&quot;lyn-team">
+<meta property="og:updated_time" content="2017-03-26T10:27:20.605Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="项目经验">
 <meta name="twitter:description" content="优逸客官网项目经验总结一、页面布局1.swiper 
@@ -119,8 +117,7 @@
 师资团队的swiper，后台有多少数据都可自动撑开，可以控制它每次显示几张，每次滑动可以滑几张，用slidesPerView,  slidesPerGroup,  spaceBetween.
 
 
-布局：
-&amp;lt;div class=&amp;quot;lyn-team swiper-contai">
+布局：12345678910111213$ &amp;lt;div class=&quot;lyn-team">
 
 
 
@@ -362,27 +359,9 @@
 <li><p>师资团队的swiper，后台有多少数据都可自动撑开，可以控制它每次显示几张，每次滑动可以滑几张，用slidesPerView,  slidesPerGroup,  spaceBetween.</p>
 </li>
 </ul>
-<p>布局：</p>
-<pre><code>&lt;div class=&quot;lyn-team swiper-container1 tab-con-lis tab-con-lis-active&quot;&gt;
-    &lt;ul class=&quot;lyn-team-inner swiper-wrapper&quot;&gt;
-        {pc:content action=&quot;position&quot; posid=&quot;34&quot; moreinfo=&quot;1&quot;}
-            {php $sztd=0}
-            {loop $data $lynsz}
-            {php $sztd++}
-            &lt;li{if $sztd==1} class=&quot;lyn-team-lis lyn-team-lishover swiper-slide&quot;{else} class=&quot;lyn-team-lis swiper-slide&quot;{/if}&gt;
-                ......
-            &lt;/li&gt;
-            {/loop}
-        {/pc}
-    &lt;/ul&gt;
-&lt;/div&gt;
-</code></pre><p>js:</p>
-<pre><code>var mySwiper = new Swiper(&apos;.swiper-container1&apos;,{
-  slidesPerView : 4,
-  slidesPerGroup : 4,
-  spaceBetween:40
-})
-</code></pre><ul>
+<p>布局：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$ &lt;div class=<span class="string">"lyn-team swiper-container1 tab-con-lis tab-con-lis-active"</span>&gt;</div><div class="line">        &lt;ul class=<span class="string">"lyn-team-inner swiper-wrapper"</span>&gt;</div><div class="line">            &#123;pc:content action=<span class="string">"position"</span> posid=<span class="string">"34"</span> moreinfo=<span class="string">"1"</span>&#125;</div><div class="line">                &#123;php <span class="variable">$sztd</span>=0&#125;</div><div class="line">                &#123;loop <span class="variable">$data</span> <span class="variable">$lynsz</span>&#125;</div><div class="line">                &#123;php <span class="variable">$sztd</span>++&#125;</div><div class="line">                &lt;li&#123;<span class="keyword">if</span> <span class="variable">$sztd</span>==1&#125; class=<span class="string">"lyn-team-lis lyn-team-lishover swiper-slide"</span>&#123;<span class="keyword">else</span>&#125; class=<span class="string">"lyn-team-lis swiper-slide"</span>&#123;/<span class="keyword">if</span>&#125;&gt;</div><div class="line">                    ......</div><div class="line">                &lt;/li&gt;</div><div class="line">                &#123;/loop&#125;</div><div class="line">            &#123;/pc&#125;</div><div class="line">        &lt;/ul&gt;</div><div class="line">    &lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ js:</div><div class="line">    var mySwiper = new Swiper(<span class="string">'.swiper-container1'</span>,&#123;</div><div class="line">      slidesPerView : 4,</div><div class="line">      slidesPerGroup : 4,</div><div class="line">      spaceBetween:40</div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
+<ul>
 <li><p>slidesPerView:</p>
 <blockquote>
 <ul>
