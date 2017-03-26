@@ -316,8 +316,7 @@ console.log(ss);
 <h2 id="如何使用图片"><a href="#如何使用图片" class="headerlink" title="如何使用图片"></a>如何使用图片</h2><blockquote>
 <!-- ![“图片描述”（可以不写）](/文件夹名/你的图片名字.JPG) -->
 <p>例如：<br>！[ ] (new/text.jpg)</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=436514312&auto=1&height=66"></iframe>
-</blockquote>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=436514312&auto=1&height=66"></iframe></blockquote>
 ]]></content>
       
         
