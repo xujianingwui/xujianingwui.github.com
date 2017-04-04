@@ -87,31 +87,19 @@
 
 
 
-<meta name="description" content="Less的常见用法
-在less中引入另一个less文件  
-123456@import &quot;ku&quot;;    //引入的是（ku.less）文件;     ```  __在less中引入一个css文件__    ``` bash@import(less) &quot;a.css&quot;  ;
-
-嵌套规则（less中最有意思的部分)  
-1234567891011121314151617181920212223.ul&amp;">
+<meta name="description" content="Less的常见用法1.在less中引入另一个less文件1@import &quot;ku&quot;;    //引入的是（ku.less）文件;
+在less中引入一个css文件1@import(less) &quot;a.css&quot;;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="less的用法">
 <meta property="og:url" content="http://yoursite.com/2017/04/04/less的用法/index.html">
 <meta property="og:site_name" content="许嘉宁博客">
-<meta property="og:description" content="Less的常见用法
-在less中引入另一个less文件  
-123456@import &quot;ku&quot;;    //引入的是（ku.less）文件;     ```  __在less中引入一个css文件__    ``` bash@import(less) &quot;a.css&quot;  ;
-
-嵌套规则（less中最有意思的部分)  
-1234567891011121314151617181920212223.ul&amp;">
-<meta property="og:updated_time" content="2017-04-04T13:19:17.975Z">
+<meta property="og:description" content="Less的常见用法1.在less中引入另一个less文件1@import &quot;ku&quot;;    //引入的是（ku.less）文件;
+在less中引入一个css文件1@import(less) &quot;a.css&quot;;">
+<meta property="og:updated_time" content="2017-04-04T13:36:19.612Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="less的用法">
-<meta name="twitter:description" content="Less的常见用法
-在less中引入另一个less文件  
-123456@import &quot;ku&quot;;    //引入的是（ku.less）文件;     ```  __在less中引入一个css文件__    ``` bash@import(less) &quot;a.css&quot;  ;
-
-嵌套规则（less中最有意思的部分)  
-1234567891011121314151617181920212223.ul&amp;">
+<meta name="twitter:description" content="Less的常见用法1.在less中引入另一个less文件1@import &quot;ku&quot;;    //引入的是（ku.less）文件;
+在less中引入一个css文件1@import(less) &quot;a.css&quot;;">
 
 
 
@@ -368,16 +356,11 @@
       
 
       
-        <h2 id="Less的常见用法"><a href="#Less的常见用法" class="headerlink" title="Less的常见用法"></a>Less的常见用法</h2><ol>
-<li><p><strong>在less中引入另一个less文件</strong>  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@import <span class="string">"ku"</span>;    //引入的是（ku.less）文件;     </div><div class="line">```  </div><div class="line"></div><div class="line">__在less中引入一个css文件__    </div><div class="line">``` bash</div><div class="line">@import(less) <span class="string">"a.css"</span>  ;</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>嵌套规则（less中最有意思的部分)</strong>  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">.ul&#123;    </div><div class="line">  width:600px;  </div><div class="line">  margin: 30px auto;  </div><div class="line">  padding: 0;   </div><div class="line">  list-style:none;  </div><div class="line">  li&#123;  </div><div class="line">     height: 30px;  </div><div class="line">     background: pink; </div><div class="line">     line-height: 30px; </div><div class="line">     margin-bottom: 5px;  </div><div class="line">     padding: 0 10px; </div><div class="line">  &#125;  </div><div class="line">  a&#123;    </div><div class="line">        <span class="built_in">float</span>: left;</div><div class="line">        //&amp;代表上一级选择器</div><div class="line">         &amp;:hover&#123;</div><div class="line">            color:<span class="comment">#000;</span></div><div class="line">           &#125;</div><div class="line">     &#125;   </div><div class="line">  span&#123;  </div><div class="line">       <span class="built_in">float</span>: right;</div><div class="line">     &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>混合的用法（也很常用）</p>
-</li>
-</ol>
+        <h2 id="Less的常见用法"><a href="#Less的常见用法" class="headerlink" title="Less的常见用法"></a>Less的常见用法</h2><p>1.<strong>在less中引入另一个less文件</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@import <span class="string">"ku"</span>;    //引入的是（ku.less）文件;</div></pre></td></tr></table></figure></p>
+<p><strong>在less中引入一个css文件</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@import(less) <span class="string">"a.css"</span>;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>2.<strong>嵌套规则（less中最有意思的部分)</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">.ul&#123;    </div><div class="line">  width:600px;  </div><div class="line">  margin: 30px auto;  </div><div class="line">  padding: 0;   </div><div class="line">  list-style:none;  </div><div class="line">  li&#123;  </div><div class="line">     height: 30px;  </div><div class="line">     background: pink; </div><div class="line">     line-height: 30px; </div><div class="line">     margin-bottom: 5px;  </div><div class="line">     padding: 0 10px; </div><div class="line">  &#125;  </div><div class="line">  a&#123;    </div><div class="line">        <span class="built_in">float</span>: left;</div><div class="line">        //&amp;代表上一级选择器</div><div class="line">         &amp;:hover&#123;</div><div class="line">            color:<span class="comment">#000;</span></div><div class="line">           &#125;</div><div class="line">     &#125;   </div><div class="line">  span&#123;  </div><div class="line">       <span class="built_in">float</span>: right;</div><div class="line">     &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>3.混合的用法（也很常用）</p>
 <ul>
 <li>.border-01{border:2px solid @ccc}       <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">调用：.test-hunhe&#123;.border-01;width:200px;height:200px&#125;</div></pre></td></tr></table></figure>
 </li>
@@ -390,18 +373,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">调用：.test-hunhe&#123;.border-03(),width:200px;height:200px&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<ol>
-<li><p>变量<br>less中想声明一个变量的话一定要用@开头，例如：@w：20px；  width:@w;</p>
-</li>
-<li><p>运算（less中的运算 +-*/）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@<span class="built_in">test</span>:200px;</div><div class="line">.box-01&#123;width:@<span class="built_in">test</span>-20;&#125;;   //less中一个带单位,另一个可以不写单位； 180px</div><div class="line">.box-01&#123;width:@<span class="built_in">test</span>-20*5;&#125;;   100px</div><div class="line">.box-01&#123;width:(@<span class="built_in">test</span>-20)*5;&#125;    //加（）提高优先级</div></pre></td></tr></table></figure>
-</li>
-<li><p>@arguments 变量<br> <strong>@arguments包含了所有传递进来的参数</strong><br>如果你不想单独处理每一个参数的话就可以像这样写</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.border-arg(@w:5px,@xx:solid,@c:black)&#123;</div><div class="line">    border:@arguments;</div><div class="line">  &#125;</div><div class="line">.test-arg&#123;</div><div class="line">    .border-arg(10px);</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>z.less 库中的常见用法</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">.fl();           //<span class="built_in">float</span>:left</div><div class="line">.fr();           //<span class="built_in">float</span>:right</div><div class="line">.clearfix();     //clear:both;</div><div class="line">.bc()            //margin:0 auto;   </div><div class="line">.rel();          //position:relative</div><div class="line">.abs();          //position:absolate</div><div class="line">.fix();          //position:fixed;</div><div class="line">.h100();         //height:100%;</div><div class="line">.l-h(100px);     //line-height:100px;</div><div class="line">.d-b();          //display:block</div><div class="line">.d-i();          //display:inline</div><div class="line">.d-ib();         //display:inline-block</div><div class="line">.font-fm();      //font-family:<span class="string">"Microsoft Yahei"</span>,<span class="string">"微软雅黑"</span>;</div><div class="line">.font<span class="_">-s</span>(14px);   //font-size:14px;(默认12px)</div><div class="line">.font-wb();      //font-weight:bold;</div><div class="line">.tl();           //text-align:left</div><div class="line">.tc();           //text-align:center</div><div class="line">.tr();           //text-align:right;</div><div class="line">.opa(50)         //opacity:0.5; (默认值80)</div><div class="line">.bg(<span class="string">"../img/logo.png"</span>,@x:0,@y:0) </div><div class="line"> //background:url(<span class="string">'../img/logo.png'</span>) 0 0 no-repeat</div><div class="line"></div><div class="line">.ellipsis()      </div><div class="line">//文字省略号 ( )内部使用百分比，例如.ellipsis(8) 出来的结果就是width:92%;</div><div class="line">.border-radius(10px)    //border-radius:10px(默认值:5px)</div></pre></td></tr></table></figure></li>
-</ol>
+<p>4.变量<br>less中想声明一个变量的话一定要用@开头，例如：@w：20px；  width:@w;</p>
+<p>5.运算（less中的运算 +-*/）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@<span class="built_in">test</span>:200px;</div><div class="line">.box-01&#123;width:@<span class="built_in">test</span>-20;&#125;;   //less中一个带单位,另一个可以不写单位； 180px</div><div class="line">.box-01&#123;width:@<span class="built_in">test</span>-20*5;&#125;;   100px</div><div class="line">.box-01&#123;width:(@<span class="built_in">test</span>-20)*5;&#125;    //加（）提高优先级</div></pre></td></tr></table></figure></p>
+<p>6.@arguments 变量<br>    <strong>@arguments包含了所有传递进来的参数</strong><br>如果你不想单独处理每一个参数的话就可以像这样写<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.border-arg(@w:5px,@xx:solid,@c:black)&#123;</div><div class="line">    border:@arguments;</div><div class="line">  &#125;</div><div class="line">.test-arg&#123;</div><div class="line">    .border-arg(10px);</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<p>7.z.less 库中的常见用法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">.fl();           //<span class="built_in">float</span>:left</div><div class="line">.fr();           //<span class="built_in">float</span>:right</div><div class="line">.clearfix();     //clear:both;</div><div class="line">.bc()            //margin:0 auto;   </div><div class="line">.rel();          //position:relative</div><div class="line">.abs();          //position:absolate</div><div class="line">.fix();          //position:fixed;</div><div class="line">.h100();         //height:100%;</div><div class="line">.l-h(100px);     //line-height:100px;</div><div class="line">.d-b();          //display:block</div><div class="line">.d-i();          //display:inline</div><div class="line">.d-ib();         //display:inline-block</div><div class="line">.font-fm();      //font-family:<span class="string">"Microsoft Yahei"</span>,<span class="string">"微软雅黑"</span>;</div><div class="line">.font<span class="_">-s</span>(14px);   //font-size:14px;(默认12px)</div><div class="line">.font-wb();      //font-weight:bold;</div><div class="line">.tl();           //text-align:left</div><div class="line">.tc();           //text-align:center</div><div class="line">.tr();           //text-align:right;</div><div class="line">.opa(50)         //opacity:0.5; (默认值80)</div><div class="line">.bg(<span class="string">"../img/logo.png"</span>,@x:0,@y:0) </div><div class="line"> //background:url(<span class="string">'../img/logo.png'</span>) 0 0 no-repeat</div><div class="line"></div><div class="line">.ellipsis()      </div><div class="line">//文字省略号 ( )内部使用百分比，例如.ellipsis(8) 出来的结果就是width:92%;</div><div class="line">.border-radius(10px)    //border-radius:10px(默认值:5px)</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -455,6 +430,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/04/H5本地存储和本地数据库/" rel="prev" title="H5本地存储和本地数据库">
+                H5本地存储和本地数据库 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -526,7 +505,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -537,7 +516,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -548,7 +527,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

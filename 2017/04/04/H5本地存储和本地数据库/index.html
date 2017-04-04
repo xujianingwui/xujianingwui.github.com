@@ -1,0 +1,865 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="h5,本地存储," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="H5 本地存储和本地数据库一、本地存储由来的背景：众所周知Html4时代Cookie的大小、格式、存储数据格式等限制，网站应用如果想在浏览器端存储用户的部分信息，那么只能借助于Cookie。但是Cookie的这些限制，也就导致了Cookie只能存储一些ID之类的标识符等简单的数据，复杂的数据就更别扯了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="H5本地存储和本地数据库">
+<meta property="og:url" content="http://yoursite.com/2017/04/04/H5本地存储和本地数据库/index.html">
+<meta property="og:site_name" content="许嘉宁博客">
+<meta property="og:description" content="H5 本地存储和本地数据库一、本地存储由来的背景：众所周知Html4时代Cookie的大小、格式、存储数据格式等限制，网站应用如果想在浏览器端存储用户的部分信息，那么只能借助于Cookie。但是Cookie的这些限制，也就导致了Cookie只能存储一些ID之类的标识符等简单的数据，复杂的数据就更别扯了。">
+<meta property="og:image" content="http://yoursite.com/2017/04/04/H5本地存储和本地数据库/code.png">
+<meta property="og:image" content="http://yoursite.com/2017/04/04/H5本地存储和本地数据库/demo.png">
+<meta property="og:updated_time" content="2017-04-04T13:50:14.592Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="H5本地存储和本地数据库">
+<meta name="twitter:description" content="H5 本地存储和本地数据库一、本地存储由来的背景：众所周知Html4时代Cookie的大小、格式、存储数据格式等限制，网站应用如果想在浏览器端存储用户的部分信息，那么只能借助于Cookie。但是Cookie的这些限制，也就导致了Cookie只能存储一些ID之类的标识符等简单的数据，复杂的数据就更别扯了。">
+<meta name="twitter:image" content="http://yoursite.com/2017/04/04/H5本地存储和本地数据库/code.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/04/H5本地存储和本地数据库/"/>
+
+
+
+
+
+  <title> H5本地存储和本地数据库 | 许嘉宁博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">许嘉宁博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Quick notes</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/04/H5本地存储和本地数据库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu JiaNing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="许嘉宁博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                H5本地存储和本地数据库
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-04T21:37:24+08:00">
+                2017-04-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/H5/" itemprop="url" rel="index">
+                    <span itemprop="name">H5</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="H5-本地存储和本地数据库"><a href="#H5-本地存储和本地数据库" class="headerlink" title="H5 本地存储和本地数据库"></a>H5 本地存储和本地数据库</h2><h3 id="一、本地存储由来的背景："><a href="#一、本地存储由来的背景：" class="headerlink" title="一、本地存储由来的背景："></a>一、本地存储由来的背景：</h3><p>众所周知Html4时代Cookie的大小、格式、存储数据格式等限制，网站应用如果想在浏览器端存储用户的部分信息，那么只能借助于Cookie。但是Cookie的这些限制，也就导致了Cookie只能存储一些ID之类的标识符等简单的数据，复杂的数据就更别扯了。<br><a id="more"></a><br><strong>下面是Cookie的限制：</strong></p>
+<blockquote>
+<ol>
+<li>大多数浏览器支持最大为 4096 字节的 Cookie。  </li>
+<li>浏览器还限制站点可以在用户计算机上存储的 Cookie 的数量。大多数浏览器只允许每个站点存储 20 个 Cookie；如果试图存储更多 Cookie，则最旧的 Cookie 便会被丢弃。  </li>
+<li>有些浏览器还会对它们将接受的来自所有站点的 Cookie 总数作出绝对限制，通常为 300 个。  </li>
+<li>Cookie默认情况都会随着Http请求发送到后台服务器，但并不是所有请求都需要Cookie的，比如：js、css、图片等请求则不需要cookie。</li>
+</ol>
+</blockquote>
+<h3 id="二、永久本地存储：localStorage"><a href="#二、永久本地存储：localStorage" class="headerlink" title="二、永久本地存储：localStorage"></a>二、永久本地存储：localStorage</h3><p>localStorage提供了四个方法来辅助我们进行对本地存储做相关操作。</p>
+<ul>
+<li>（1）setItem(key,value)：添加本地存储数据。两个参数，非常简单就不说了。</li>
+<li>（2）getItem(key):通过key获取相应的Value。</li>
+<li>（3）removeItem(key):通过key删除本地数据。</li>
+<li>（4）clear():清空数据。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;  &lt;/br&gt;</div><div class="line">    //添加key-value 数据到 sessionStorage</div><div class="line">    localStorage.setItem(&quot;demokey&quot;, &quot;http://blog.itjeek.com&quot;);</div><div class="line">    //通过key来获取value</div><div class="line">    var dt = localStorage.getItem(&quot;demokey&quot;);</div><div class="line">    alert(dt);</div><div class="line">    //清空所有的key-value数据。</div><div class="line">    //localStorage.clear();</div><div class="line">    alert(localStorage.length);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h3 id="三、会话级别的本地存储：sessionStorage"><a href="#三、会话级别的本地存储：sessionStorage" class="headerlink" title="三、会话级别的本地存储：sessionStorage"></a>三、会话级别的本地存储：sessionStorage</h3><p>sessionStorage提供了四个方法来辅助我们进行对本地存储做相关操作。</p>
+<ul>
+<li>（1）setItem(key,value)：添加本地存储数据。两个参数，非常简单就不说了。</li>
+<li>（2）getItem(key):通过key获取相应的Value。</li>
+<li>（3）removeItem(key):通过key删除本地数据。</li>
+<li>（4）clear():清空数据。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    //添加key-value 数据到 sessionStorage</div><div class="line">    sessionStorage.setItem(&quot;demokey&quot;, &quot;http://blog.itjeek.com&quot;);</div><div class="line">    //通过key来获取value</div><div class="line">    var dt = sessionStorage.getItem(&quot;demokey&quot;);</div><div class="line">    alert(dt);</div><div class="line">    //清空所有的key-value数据。</div><div class="line">    //sessionStorage.clear();</div><div class="line">    alert(sessionStorage.length);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>我自己写的例子<br><img src="/2017/04/04/H5本地存储和本地数据库/code.png" alt="我自己写的例子"></p>
+<h3 id="四、逆天了本地数据库"><a href="#四、逆天了本地数据库" class="headerlink" title="四、逆天了本地数据库"></a>四、逆天了本地数据库</h3><p>虽然Html5已经提供了功能强大的localStorage和sessionStorage，但是他们两个都只能提供存储简单数据结构的数据，对于复杂的Web应用的数据却无能为力。逆天的是Html5提供了一个浏览器端的数据库支持，允许我们直接通JS的API在浏览器端创建一个本地的数据库，而且支持标准的SQL的CRUD操作，让离线的Web应用更加方便的存储结构化的数据。接下里介绍一下本地数据的相关API和用法。</p>
+<p>操作本地数据库的最基本的步骤是：</p>
+<ul>
+<li>第一步：openDatabase方法：创建一个访问数据库的对象。  </li>
+<li>第二步：使用第一步创建的数据库访问对象来执行transaction方法，通过此方法可以设置一个开启事务成功的事件响应方法，在事件响应方法中可以执行SQL.  </li>
+<li>第三步：通过executeSql方法执行查询，当然查询可以是：CRUD。<br>接下来分别介绍一下相关的方法的参数和用法。  </li>
+</ul>
+<p>（1）openDatabase方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//Demo：获取或者创建一个数据库，如果数据库不存在那么创建之</div><div class="line">var dataBase = openDatabase(&quot;student&quot;, &quot;1.0&quot;, &quot;学生表&quot;, 1024 * 1024,</div><div class="line"> function () &#123; &#125;);</div></pre></td></tr></table></figure></p>
+<p>openDatabase方法打开一个已经存在的数据库，如果数据库不存在，它还可以创建数据库。几个参数意义分别是：  </p>
+<ul>
+<li>1，数据库名称。  </li>
+<li>2，数据库的版本号，目前来说传个1.0就可以了，当然可以不填；  </li>
+<li>3，对数据库的描述。    </li>
+<li>4，设置分配的数据库的大小（单位是kb）。  </li>
+<li>5，回调函数(可省略)。<br>初次调用时创建数据库，以后就是建立连接了。</li>
+</ul>
+<p>（2）db.transaction方法可以设置一个回调函数，此函数可以接受一个参数就是我们开启的事务的对象。然后通过此对象可以进行执行Sql脚本，跟下面的步骤可以结合起来。</p>
+<p>（3）通过executeSql方法执行查询。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ts.executeSql(sqlQuery,[value1,value2..],dataHandler,errorHandler)</div></pre></td></tr></table></figure>
+<p>参数说明：</p>
+<ul>
+<li>qlQuery：需要具体执行的sql语句，可以是create、select、update、delete；</li>
+<li>value1,value2..]：sql语句中所有使用到的参数的数组，在executeSql方法中，将s&gt;语句中所要使用的参数先用“?”代替，然后依次将这些参数组成数组放在第二个参数中</li>
+<li>ataHandler：执行成功是调用的回调函数，通过该函数可以获得查询结果集；</li>
+<li>4,errorHandler：执行失败时调用的回调函数；</li>
+</ul>
+<p>下面是一个综合的例子，可以看一下：</p>
+<pre><code class="bash">&lt;head&gt;
+ &lt;script src=<span class="string">"Scripts/jquery-1.5.1.js"</span> <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;&lt;/script&gt;
+    &lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;
+        <span class="keyword">function</span> <span class="function"><span class="title">initDatabase</span></span>() {
+            var db = getCurrentDb();//初始化数据库
+            <span class="keyword">if</span>(!db) {alert(<span class="string">"您的浏览器不支持HTML5本地数据库"</span>);<span class="built_in">return</span>;}
+            db.transaction(<span class="keyword">function</span> (trans) {//启动一个事务，并设置回调函数
+                //执行创建表的Sql脚本
+                trans.executeSql(<span class="string">"create table if not exists Demo(uName text null,title text null,words text null)"</span>, [], <span class="keyword">function</span> (trans, result) {
+                }, <span class="keyword">function</span> (trans, message) {//消息的回调函数alert(message);});
+            }, <span class="keyword">function</span> (trans, result) {
+            }, <span class="keyword">function</span> (trans, message) {
+            });
+        }
+        $(<span class="function"><span class="title">function</span></span> () {//页面加载完成后绑定页面按钮的点击事件
+            initDatabase();
+            $(<span class="string">"#btnSave"</span>).click(<span class="function"><span class="title">function</span></span> () {
+                var txtName = $(<span class="string">"#txtName"</span>).val();
+                var txtTitle = $(<span class="string">"#txtTitle"</span>).val();
+                var txtWords = $(<span class="string">"#txtWords"</span>).val();
+                var db = getCurrentDb();
+                //执行sql脚本，插入数据
+                db.transaction(<span class="keyword">function</span> (trans) {
+                    trans.executeSql(<span class="string">"insert into Demo(uName,title,words) values(?,?,?) "</span>, [txtName, txtTitle, txtWords], <span class="keyword">function</span> (ts, data) {
+                    }, <span class="keyword">function</span> (ts, message) {
+                        alert(message);
+                    });
+                });
+                showAllTheData();
+            });
+        });
+        <span class="keyword">function</span> <span class="function"><span class="title">getCurrentDb</span></span>() {
+            //打开数据库，或者直接连接数据库参数：数据库名称，版本，概述，大小
+            //如果数据库不存在那么创建之
+            var db = openDatabase(<span class="string">"myDb"</span>, <span class="string">"1.0"</span>, <span class="string">"it's to save demo data!"</span>, 1024 * 1024); ;
+            <span class="built_in">return</span> db;
+        }
+        //显示所有数据库中的数据到页面上去
+        <span class="keyword">function</span> <span class="function"><span class="title">showAllTheData</span></span>() {
+            $(<span class="string">"#tblData"</span>).empty();
+            var db = getCurrentDb();
+            db.transaction(<span class="keyword">function</span> (trans) {
+                trans.executeSql(<span class="string">"select * from Demo "</span>, [], <span class="keyword">function</span> (ts, data) {
+                    <span class="keyword">if</span> (data) {
+                        <span class="keyword">for</span> (var i = 0; i &lt; data.rows.length; i++) {
+                            appendDataToTable(data.rows.item(i));//获取某行数据的json对象
+                        }
+                    }
+                }, <span class="keyword">function</span> (ts, message) {alert(message);var tst = message;});
+            });
+        }
+        <span class="keyword">function</span> appendDataToTable(data) {//将数据展示到表格里面
+            //uName,title,words
+            var txtName = data.uName;
+            var txtTitle = data.title;
+            var words = data.words;
+            var strHtml = <span class="string">""</span>;
+            strHtml += <span class="string">"&lt;tr&gt;"</span>;
+            strHtml += <span class="string">"&lt;td&gt;"</span>+txtName+<span class="string">"&lt;/td&gt;"</span>;
+            strHtml += <span class="string">"&lt;td&gt;"</span> + txtTitle + <span class="string">"&lt;/td&gt;"</span>;
+            strHtml += <span class="string">"&lt;td&gt;"</span> + words + <span class="string">"&lt;/td&gt;"</span>;
+            strHtml += <span class="string">"&lt;/tr&gt;"</span>;
+            $(<span class="string">"#tblData"</span>).append(strHtml);
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;td&gt;用户名：&lt;/td&gt;
+            &lt;td&gt;&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> name=<span class="string">"txtName"</span> id=<span class="string">"txtName"</span> required/&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+           &lt;tr&gt;
+            &lt;td&gt;标题：&lt;/td&gt;
+            &lt;td&gt;&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> name=<span class="string">"txtTitle"</span> id=<span class="string">"txtTitle"</span> required/&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;留言：&lt;/td&gt;
+            &lt;td&gt;&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> name=<span class="string">"txtWords"</span> id=<span class="string">"txtWords"</span> required/&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;input <span class="built_in">type</span>=<span class="string">"button"</span> value=<span class="string">"保存"</span> id=<span class="string">"btnSave"</span>/&gt;
+    &lt;hr/&gt;
+    &lt;input <span class="built_in">type</span>=<span class="string">"button"</span> value=<span class="string">"展示所哟数据"</span> onclick=<span class="string">"showAllTheData();"</span>/&gt;
+    &lt;table id=<span class="string">"tblData"</span>&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>执行的效果如图：  </p>
+<p><img src="/2017/04/04/H5本地存储和本地数据库/demo.png" alt="效果图">  </p>
+<p><a href="http://files.cnblogs.com/files/fly_dragon/HTML5.zip" target="_blank" rel="external">源码下载:</a> <a href="http://files.cnblogs.com/files/fly_dragon/HTML5.zip" target="_blank" rel="external">http://files.cnblogs.com/files/fly_dragon/HTML5.zip</a>  </p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/h5/" rel="tag"># h5</a>
+          
+            <a href="/tags/本地存储/" rel="tag"># 本地存储</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/04/less的用法/" rel="next" title="less的用法">
+                <i class="fa fa-chevron-left"></i> less的用法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Xu JiaNing" />
+          <p class="site-author-name" itemprop="name">Xu JiaNing</p>
+           
+              <p class="site-description motion-element" itemprop="description">胡编一通，乱写一气</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#H5-本地存储和本地数据库"><span class="nav-number">1.</span> <span class="nav-text">H5 本地存储和本地数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、本地存储由来的背景："><span class="nav-number">1.1.</span> <span class="nav-text">一、本地存储由来的背景：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、永久本地存储：localStorage"><span class="nav-number">1.2.</span> <span class="nav-text">二、永久本地存储：localStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、会话级别的本地存储：sessionStorage"><span class="nav-number">1.3.</span> <span class="nav-text">三、会话级别的本地存储：sessionStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、逆天了本地数据库"><span class="nav-number">1.4.</span> <span class="nav-text">四、逆天了本地数据库</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xu JiaNing</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
