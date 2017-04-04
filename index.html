@@ -361,20 +361,31 @@
           
             <h2 id="Less的常见用法"><a href="#Less的常见用法" class="headerlink" title="Less的常见用法"></a>Less的常见用法</h2><ol>
 <li><p><strong>在less中引入另一个less文件</strong>  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">    @import <span class="string">"ku"</span>;    //引入的是（ku.less）文件;     </div><div class="line">```  </div><div class="line"></div><div class="line">   __在less中引入一个css文件__    </div><div class="line">``` bash</div><div class="line">    @import(less) <span class="string">"a.css"</span>  ;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@import <span class="string">"ku"</span>;    //引入的是（ku.less）文件;     </div><div class="line">```  </div><div class="line"></div><div class="line">__在less中引入一个css文件__    </div><div class="line">``` bash</div><div class="line">@import(less) <span class="string">"a.css"</span>  ;</div></pre></td></tr></table></figure>
 </li>
 <li><p><strong>嵌套规则（less中最有意思的部分)</strong>  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">.ul&#123;    </div><div class="line">  width:600px;  </div><div class="line">  margin: 30px auto;  </div><div class="line">  padding: 0;   </div><div class="line">  list-style:none;  </div><div class="line">  li&#123;  </div><div class="line">     height: 30px;  </div><div class="line">     background: pink; </div><div class="line">     line-height: 30px; </div><div class="line">     margin-bottom: 5px;  </div><div class="line">     padding: 0 10px; </div><div class="line">  &#125;  </div><div class="line">  a&#123;    </div><div class="line">        <span class="built_in">float</span>: left;</div><div class="line">        //&amp;代表上一级选择器</div><div class="line">         &amp;:hover&#123;</div><div class="line">            color:<span class="comment">#000;</span></div><div class="line">           &#125;</div><div class="line">     &#125;   </div><div class="line">  span&#123;  </div><div class="line">       <span class="built_in">float</span>: right;</div><div class="line">     &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>混合的用法（也很常用）</p>
-<ul>
-<li><p>.border-01{border:2px solid @ccc}       </p>
-<figure class="highlight bash"><figcaption><span>调用：.test-hunhe&#123;.border-01;width:200px;height:200px&#125;```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">    - .border-02(@w)&#123;border:@w solid <span class="comment">#ccc&#125;  </span></div><div class="line">``` bash     调用：.test-hunhe&#123;.border-02(10px),width:200px;height:200px&#125;</div></pre></td></tr></table></figure>
 </li>
-<li><p>.border-03(@w:10px){border:@w solid #ccc}  </p>
-<figure class="highlight bash"><figcaption><span>调用：.test-hunhe&#123;.border-03(),width:200px;height:200px&#125;```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">4. 变量  </div><div class="line">less中想声明一个变量的话一定要用@开头，例如：@w：20px；  width:@w;</div><div class="line"></div><div class="line">5. 运算（less中的运算 +-*/）</div><div class="line">``` bash</div><div class="line">        @<span class="built_in">test</span>:200px;</div><div class="line">        .box-01&#123;width:@<span class="built_in">test</span>-20;&#125;;   //less中一个带单位,另一个可以不写单位； 180px</div><div class="line">        .box-01&#123;width:@<span class="built_in">test</span>-20*5;&#125;;   100px</div><div class="line">        .box-01&#123;width:(@<span class="built_in">test</span>-20)*5;&#125;    //加（）提高优先级</div></pre></td></tr></table></figure>
+</ol>
+<ul>
+<li>.border-01{border:2px solid @ccc}       <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">调用：.test-hunhe&#123;.border-01;width:200px;height:200px&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<ul>
+<li><p>.border-02(@w){border:@w solid #ccc}  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">调用：.test-hunhe&#123;.border-02(10px),width:200px;height:200px&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>.border-03(@w:10px){border:@w solid #ccc}  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">调用：.test-hunhe&#123;.border-03(),width:200px;height:200px&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li><p>变量<br>less中想声明一个变量的话一定要用@开头，例如：@w：20px；  width:@w;</p>
+</li>
+<li><p>运算（less中的运算 +-*/）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@<span class="built_in">test</span>:200px;</div><div class="line">.box-01&#123;width:@<span class="built_in">test</span>-20;&#125;;   //less中一个带单位,另一个可以不写单位； 180px</div><div class="line">.box-01&#123;width:@<span class="built_in">test</span>-20*5;&#125;;   100px</div><div class="line">.box-01&#123;width:(@<span class="built_in">test</span>-20)*5;&#125;    //加（）提高优先级</div></pre></td></tr></table></figure>
 </li>
 <li><p>@arguments 变量<br> <strong>@arguments包含了所有传递进来的参数</strong><br>如果你不想单独处理每一个参数的话就可以像这样写</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.border-arg(@w:5px,@xx:solid,@c:black)&#123;</div><div class="line">    border:@arguments;</div><div class="line">  &#125;</div><div class="line">.test-arg&#123;</div><div class="line">    .border-arg(10px);</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
