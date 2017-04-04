@@ -4,6 +4,51 @@
   
     
     <entry>
+      <title><![CDATA[less的用法]]></title>
+      <url>http://yoursite.com/2017/04/04/less%E7%9A%84%E7%94%A8%E6%B3%95/</url>
+      <content type="html"><![CDATA[<h2 id="Less的常见用法"><a href="#Less的常见用法" class="headerlink" title="Less的常见用法"></a>Less的常见用法</h2><ol>
+<li><p><strong>在less中引入另一个less文件</strong>  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">    @import <span class="string">"ku"</span>;    //引入的是（ku.less）文件;     </div><div class="line">```  </div><div class="line"></div><div class="line">   __在less中引入一个css文件__    </div><div class="line">``` bash</div><div class="line">    @import(less) <span class="string">"a.css"</span>  ;</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>嵌套规则（less中最有意思的部分)</strong>  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">.ul&#123;    </div><div class="line">  width:600px;  </div><div class="line">  margin: 30px auto;  </div><div class="line">  padding: 0;   </div><div class="line">  list-style:none;  </div><div class="line">  li&#123;  </div><div class="line">     height: 30px;  </div><div class="line">     background: pink; </div><div class="line">     line-height: 30px; </div><div class="line">     margin-bottom: 5px;  </div><div class="line">     padding: 0 10px; </div><div class="line">  &#125;  </div><div class="line">  a&#123;    </div><div class="line">        <span class="built_in">float</span>: left;</div><div class="line">        //&amp;代表上一级选择器</div><div class="line">         &amp;:hover&#123;</div><div class="line">            color:<span class="comment">#000;</span></div><div class="line">           &#125;</div><div class="line">     &#125;   </div><div class="line">  span&#123;  </div><div class="line">       <span class="built_in">float</span>: right;</div><div class="line">     &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>混合的用法（也很常用）</p>
+<ul>
+<li><p>.border-01{border:2px solid @ccc}       </p>
+<figure class="highlight bash"><figcaption><span>调用：.test-hunhe&#123;.border-01;width:200px;height:200px&#125;```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">    - .border-02(@w)&#123;border:@w solid <span class="comment">#ccc&#125;  </span></div><div class="line">``` bash     调用：.test-hunhe&#123;.border-02(10px),width:200px;height:200px&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>.border-03(@w:10px){border:@w solid #ccc}  </p>
+<figure class="highlight bash"><figcaption><span>调用：.test-hunhe&#123;.border-03(),width:200px;height:200px&#125;```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">4. 变量  </div><div class="line">less中想声明一个变量的话一定要用@开头，例如：@w：20px；  width:@w;</div><div class="line"></div><div class="line">5. 运算（less中的运算 +-*/）</div><div class="line">``` bash</div><div class="line">        @<span class="built_in">test</span>:200px;</div><div class="line">        .box-01&#123;width:@<span class="built_in">test</span>-20;&#125;;   //less中一个带单位,另一个可以不写单位； 180px</div><div class="line">        .box-01&#123;width:@<span class="built_in">test</span>-20*5;&#125;;   100px</div><div class="line">        .box-01&#123;width:(@<span class="built_in">test</span>-20)*5;&#125;    //加（）提高优先级</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>@arguments 变量<br> <strong>@arguments包含了所有传递进来的参数</strong><br>如果你不想单独处理每一个参数的话就可以像这样写</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.border-arg(@w:5px,@xx:solid,@c:black)&#123;</div><div class="line">    border:@arguments;</div><div class="line">  &#125;</div><div class="line">.test-arg&#123;</div><div class="line">    .border-arg(10px);</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>z.less 库中的常见用法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">.fl();           //<span class="built_in">float</span>:left</div><div class="line">.fr();           //<span class="built_in">float</span>:right</div><div class="line">.clearfix();     //clear:both;</div><div class="line">.bc()            //margin:0 auto;   </div><div class="line">.rel();          //position:relative</div><div class="line">.abs();          //position:absolate</div><div class="line">.fix();          //position:fixed;</div><div class="line">.h100();         //height:100%;</div><div class="line">.l-h(100px);     //line-height:100px;</div><div class="line">.d-b();          //display:block</div><div class="line">.d-i();          //display:inline</div><div class="line">.d-ib();         //display:inline-block</div><div class="line">.font-fm();      //font-family:<span class="string">"Microsoft Yahei"</span>,<span class="string">"微软雅黑"</span>;</div><div class="line">.font<span class="_">-s</span>(14px);   //font-size:14px;(默认12px)</div><div class="line">.font-wb();      //font-weight:bold;</div><div class="line">.tl();           //text-align:left</div><div class="line">.tc();           //text-align:center</div><div class="line">.tr();           //text-align:right;</div><div class="line">.opa(50)         //opacity:0.5; (默认值80)</div><div class="line">.bg(<span class="string">"../img/logo.png"</span>,@x:0,@y:0) </div><div class="line"> //background:url(<span class="string">'../img/logo.png'</span>) 0 0 no-repeat</div><div class="line"></div><div class="line">.ellipsis()      </div><div class="line">//文字省略号 ( )内部使用百分比，例如.ellipsis(8) 出来的结果就是width:92%;</div><div class="line">.border-radius(10px)    //border-radius:10px(默认值:5px)</div></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> less </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> less </tag>
+            
+            <tag> css </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[vue中keep-alive用法]]></title>
       <url>http://yoursite.com/2017/03/30/vue%E4%B8%ADkeep-alive%E7%94%A8%E6%B3%95/</url>
       <content type="html"><![CDATA[<h2 id="路由开启keep-alive时的注意点"><a href="#路由开启keep-alive时的注意点" class="headerlink" title="路由开启keep-alive时的注意点"></a>路由开启keep-alive时的注意点</h2><p>这个不是业务的要求，但是看到每次进入页面就重新渲染DOM然后再获取数据更新DOM，觉得作为一个前端工程师有必要优化下的加载逻辑，正好vue提供了keep-alive的功能，所以就试用了下。当然，干任何事儿都不会一帆风顺的，在路上的磕磕碰碰在所难免，故在此记录下遇到的问题，希望看到这篇文章的人能有所帮助。ps：这个也没多难。</p>
